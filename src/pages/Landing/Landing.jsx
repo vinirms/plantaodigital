@@ -3,7 +3,7 @@ import { Main, SessaoChamada, SessaoLogin } from './LandingStyle'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import enf from   '../../assets/Images/enf.png'
-import logo from   '../../assets/Images/riosd.png'
+import logo from   '../../assets/Images/RIOSD.png'
 
 const Landing = () => {
 
