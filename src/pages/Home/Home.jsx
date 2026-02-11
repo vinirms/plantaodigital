@@ -18,7 +18,7 @@ import {
 } from './HomeStyle';
 
 // imagens
-import riosaude from "../../assets/Images/riosd.png";
+import riosaude from "../../assets/Images/RIOSD.png";
 import busca from "../../assets/Images/Search.ico";
 import reload from "../../assets/Images/recarregar.ico";
 import totalpct from "../../assets/Images/pct.png";
