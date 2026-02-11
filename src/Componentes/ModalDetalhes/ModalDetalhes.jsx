@@ -86,6 +86,7 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
               value={formPaciente.enfLeito || ""}
               onChange={handleChange}
               $largura="55px"
+              $larguraResponsive="55px"
               />
           </div>
           <div className='divCampos'>
@@ -96,6 +97,7 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
               value={formPaciente.nomePaciente || ""}
               onChange={handleChange}
               $largura="400px"
+              $larguraResponsive="245px"
               />
           </div>
           <div className='divCampos'>
@@ -106,6 +108,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
               value={formPaciente.idade || ""}
               onChange={handleChange}
               $largura="40px"
+              $larguraResponsive="55px"
+
             />
           </div>
 
@@ -128,6 +132,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
               value={formPaciente.dataInternacao || ""}
               onChange={handleChange}
               $largura="110px"
+              $larguraResponsive="115px"
+
             />
          </div>
 
@@ -147,6 +153,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 value={formPaciente.alergias || ""}
                 onChange={handleChange}
                 $largura="320px"
+              $larguraResponsive="325px"
+
               />
 
               <datalist id="alergias">
@@ -164,10 +172,12 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
               value={formPaciente.diagnostico || ""}
               onChange={handleChange}
               $largura="395px"
+              $larguraResponsive="325px"
+
               />
           </div>
         
-          {/* <button onClick={handleSalvar}>Salvar</button> */}
+         
         </ModalBody>
 
           {/* Modal body LINHA TRES */}
@@ -183,6 +193,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 value={formPaciente.acessoData || ""}
                 onChange={handleChange}
                 $largura="200px"
+                $larguraResponsive="145px"
+
               />
 
               <datalist id="acessoData">
@@ -209,6 +221,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 value={formPaciente.swabData || ""}
                 onChange={handleChange}
                 $largura="130px"
+              $larguraResponsive="155px"
+
               />
 
               <datalist id="precaucao">
@@ -226,6 +240,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 value={formPaciente.dieta || ""}
                 onChange={handleChange}
                 $largura="185px"
+              $larguraResponsive="145px"
+
               />
 
               <datalist id="dieta">
@@ -246,6 +262,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 value={formPaciente.diurese || ""}
                 onChange={handleChange}
                 $largura="150px"
+              $larguraResponsive="155px"
+
               />
 
               <datalist id="diurese">
@@ -255,7 +273,7 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 <option value="Via Enteral" />
               </datalist>
           </div>
-          {/* <button onClick={handleSalvar}>Salvar</button> */}
+          
         </ModalBody>
 
          {/* Modal body LINHA QUATRO */}
@@ -270,6 +288,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 value={formPaciente.drenos || ""}
                 onChange={handleChange}
                 $largura="345px"
+              $larguraResponsive="325px"
+
               />
           </div>
  
@@ -283,6 +303,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 value={formPaciente.eEvacuacao || ""}
                 onChange={handleChange}
                 $largura="170px"
+                $larguraResponsive="145px"
+
               />
 
               <datalist id="evacuacao">
@@ -300,6 +322,8 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 value={formPaciente.ostomias || ""}
                 onChange={handleChange}
                 $largura="170px"
+                $larguraResponsive="155px"
+
               />
 
               <datalist id="ostomias">
@@ -315,7 +339,6 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
           </div>
          
          
-          {/* <button onClick={handleSalvar}>Salvar</button> */}
         </ModalBody>
 
           {/* Modal body LINHA CINCO */}
@@ -373,7 +396,6 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
 
               </InputClinica>
           </div>
-          {/* <button onClick={handleSalvar}>Salvar</button> */}
         </ModalBody>
 
              {/* Modal body LINHA SEIS */}
@@ -404,7 +426,6 @@ const ModalDetalhes = ({ mode, aberto, onClose, paciente, onSalvar ,onExcluir}) 
                 />
             </div>
  
-          {/* <button onClick={handleSalvar}>Salvar</button> */}
         </ModalBody>
                  {/* Modal body LINHA SETE */}
       <ModalBody>

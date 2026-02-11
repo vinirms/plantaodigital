@@ -6,17 +6,24 @@ export const Main = styled.main`
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-   
+   @media (max-width: 900px) {
+   background-color: #ff0909;
+    border: 2px solid red;
+  }
    `
 
 export const SessaoChamada = styled.section`
 /* border: 2px solid red; */
 width:75%;
- min-height: 100vh;
-background-color: #F4F7FC;
+min-height: 100vh;
+/* background-color: #005eff; */
+
+    @media (max-width: 900px) {
+    display: none;
+  }
 
 .tituloChamada{
-     display: flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     height:70vh;
@@ -27,6 +34,7 @@ img{
     height:640px;
 
 }
+ 
 }
 
 
@@ -51,12 +59,14 @@ width: 1000px;
         padding: 0;
     }
      p{
-         font-family: 'Inter', sans-serif;
-       max-width: 620px;
-font-size: 1rem;
-line-height: 1.6;
-color: #4a4a4a;
+        font-family: 'Inter', sans-serif;
+        max-width: 620px;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #4a4a4a;
      }
+
+ 
 }
 
 
@@ -154,6 +164,7 @@ h1{
     height: 100%;
     width: 100%;
     /* border: 2px solid blue; */
+   
 button{
     width:200px;
     color: white;
@@ -209,5 +220,14 @@ padding: 2px;
         font-family: 'Inter', sans-serif;
         font-size: .7rem;
      }
+
+   
 }
+
+ @media (max-width: 900px) {
+    width: 100%;
+
+    min-height: 100vh;
+    box-shadow: none; /* opcional, pra não ficar sombra “estranha” no mobile */
+  }
 `

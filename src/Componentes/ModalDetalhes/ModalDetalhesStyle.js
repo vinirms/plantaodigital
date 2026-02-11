@@ -12,7 +12,11 @@ export const Overlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 900px) {
+      min-height: 90vh;
+      max-width: 100%;
 
+  }
 `;
 
 export const ModalContainer = styled.div`
@@ -21,8 +25,12 @@ export const ModalContainer = styled.div`
   min-height: 40%;
   border-radius: 8px;
   padding: 20px;
- 
- 
+  @media (max-width: 900px) {
+      max-height: 100vh;
+      max-width: 100%;
+    overflow-y: auto;
+  }
+
 `;
 
 export const ModalHeader = styled.div`
@@ -65,6 +73,10 @@ label{
   flex-direction: column;
   gap: 2px;
 }
+  @media (max-width: 900px) {
+   flex-wrap: wrap;
+
+  }
 `
 
 export const BtnContainer = styled.div`
@@ -73,6 +85,10 @@ export const BtnContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+   @media (max-width: 900px) {
+      justify-content: center;
+      margin-bottom: 20px;
+  }
 `
 
 export const BtnSalvarAdm = styled.button`
@@ -149,6 +165,12 @@ export const InputDados =styled.input`
   font-family: 'Inter', sans-serif;
   padding: 2px;
   border-radius: 5px;
+
+  @media (max-width: 900px) {
+      
+       width: ${props => props.$larguraResponsive || "100px"};
+  }
+ 
 `
   
 export const InputClinica=styled.select`
@@ -160,6 +182,10 @@ export const InputClinica=styled.select`
   border-radius: 5px;
   font-family: 'Inter', sans-serif;
 
+@media (max-width: 900px) {
+      width: 100px;
+
+  }
 `
 export const InputTextArea=styled.textarea`
   width: 350px;
@@ -169,5 +195,8 @@ export const InputTextArea=styled.textarea`
   border: 1px solid #ced6e0;
   font-family: 'Inter', sans-serif;
 
-  
+  @media (max-width: 900px) {
+      width: 320px;
+
+  }
 `

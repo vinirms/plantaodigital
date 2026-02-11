@@ -5,8 +5,13 @@ import axios from "axios";
 // styled components
 import {
   Botoes,
-  CampoFiltro,
+  Btnlogout,
+  BtnModeResponsive,
+  CampoFiltroClinica,
+  CampoFiltroEnfLeito,
+  CampoFiltroNome,
   Cards,
+  ContainerFiltros,
   FiltroClinica,
   FiltroEnf,
   FiltroNome,
@@ -19,6 +24,8 @@ import {
 
 // imagens
 import riosaude from "../../assets/Images/RIOSD.png";
+import menu from "../../assets/Images/Menu.ico";
+import logout from "../../assets/Images/Logout.ico";
 import busca from "../../assets/Images/Search.ico";
 import reload from "../../assets/Images/recarregar.ico";
 import totalpct from "../../assets/Images/pct.png";
@@ -33,6 +40,7 @@ import ModalNotificacao from '../../Componentes/ModalNotificacao/ModalNotificaca
 
 
 const Home = () => {
+const [btnModeResponsive, setBtnModeResponsive] = useState(false);
 
 const [pacientes, setPacientes] = useState([]);
 const [filtroEnfLeito, setFiltroEnfLeito] = useState("");
@@ -318,7 +326,7 @@ const handleReset = () => {
             <div className='divSetor'>
                 <h3>Setor:</h3>
             </div>
-            <button onClick={handleLogOut}>Sair</button>
+            <Btnlogout onClick={handleLogOut}><img src={logout} alt="imagem logout" /></Btnlogout>
         </NavDiv>
         <MainContainer>
             <NavCampos>
@@ -337,7 +345,7 @@ const handleReset = () => {
                                 Total Adimissões
                             </h3>
                             <div className='cardImage'>
-                                <p>25</p>
+                                <p></p>
                                 <img src={totaladm} alt="Icone saida de pessoas" />
                             </div>
                     </Cards>
@@ -346,13 +354,18 @@ const handleReset = () => {
                                 Total Altas
                             </h3>
                             <div className='cardImage'>
-                                <p>25</p>
+                                <p></p>
                                 <img src={totalalta} alt="Icone saida de pessoas" />
                             </div>
                     </Cards>
                 </div>
-                <div className='filtros'>
-                    <CampoFiltro>
+
+                <BtnModeResponsive onClick={()=> setBtnModeResponsive(!btnModeResponsive)}>
+                  <img src={menu}alt="toggle menu" />
+                </BtnModeResponsive>
+                
+                <ContainerFiltros visible={btnModeResponsive} >
+                    <CampoFiltroEnfLeito>
                         <label htmlFor="Enf">Filtrar Enf/Leito</label>
                         <FiltroEnf 
                         type="text" 
@@ -362,8 +375,8 @@ const handleReset = () => {
                         maxLength={5}
                         value={filtroEnfLeito}
                         onChange={(e) => setFiltroEnfLeito(e.target.value)}/>
-                    </CampoFiltro>
-                    <CampoFiltro>
+                    </CampoFiltroEnfLeito>
+                     <CampoFiltroNome>
                         <label htmlFor="Enf">Filtrar Nome</label>
                         <FiltroNome 
                         type="text" 
@@ -371,8 +384,8 @@ const handleReset = () => {
                         id="" 
                         value={filtroNome}
                         onChange={(e) => setFiltroNome(e.target.value)}/>
-                    </CampoFiltro>
-                    <CampoFiltro>
+                    </CampoFiltroNome>
+                   <CampoFiltroClinica>
                             <label htmlFor="Setor">Filtrar Clinica</label>
                           <FiltroClinica 
                             id="setor" 
@@ -384,10 +397,10 @@ const handleReset = () => {
                             <option value="emergencia">Emergência</option>
                             <option value="enfermaria">Enfermaria</option>
                         </FiltroClinica>
-                    </CampoFiltro>
+                    </CampoFiltroClinica>
                     <button onClick={handleBuscar}><img src={busca} alt="" /></button>
                     <button onClick={handleReset}><img src={reload} alt="" /></button>
-                </div>
+                </ContainerFiltros>
                 <Botoes >
                     <button onClick={abrirNovaAdmissao}>Nova Admissão</button>
                     <button onClick={gerarPdf}>PDF Passagem</button>
