@@ -16,7 +16,7 @@ const UrlApi = "https://plantaodigital-f0e2h2cbehaueege.brazilsouth-01.azurewebs
 
 
 const handleLogin = async () => {
-    console.log(setor)
+   
   try {
     const response = await axios.post(
      `${UrlApi}/api/auth/login` ,

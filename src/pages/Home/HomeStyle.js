@@ -121,6 +121,7 @@ export const NavCampos = styled.div`
     flex-wrap: wrap;
   @media (max-width: 1457px) {
     /* border: 1px solid green; */
+    margin-bottom: 10px;
   }
 
 .quantitativo{
@@ -362,8 +363,7 @@ display: flex   ;
 flex-wrap: wrap;
 gap: 10PX;
 overflow-y: auto;
-  @media (max-width: 900px) {
-    align-items: center;
+align-items: center;
+justify-content: center;
 
-  }
 `
