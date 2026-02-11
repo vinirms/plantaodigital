@@ -117,8 +117,8 @@ const handleLogin = async () => {
                     onChange={(e)=> setSetor(e.target.value)}>
                     <option value="">Selecione</option>
                     <option value="urologia">UROLOGIA</option>
-                    <option value="emergencia">Emergência</option>
-                    <option value="enfermaria">Enfermaria</option>
+                    {/* <option value="emergencia">Emergência</option>
+                    <option value="enfermaria">Enfermaria</option> */}
                     </select>
                 </div>
 

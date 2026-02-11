@@ -393,9 +393,9 @@ const handleReset = () => {
                             value={filtroClinica}
                             onChange={(e) => setFiltroClinica(e.target.value)}>
                             <option value="">Selecione</option>
-                            <option value="uti">UTI</option>
-                            <option value="emergencia">Emergência</option>
-                            <option value="enfermaria">Enfermaria</option>
+                            <option value="urologia">UROLOGIA</option>
+                            {/* <option value="emergencia">Emergência</option>
+                            <option value="enfermaria">Enfermaria</option> */}
                         </FiltroClinica>
                     </CampoFiltroClinica>
                     <button onClick={handleBuscar}><img src={busca} alt="" /></button>

@@ -6,10 +6,7 @@ export const Main = styled.main`
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-   @media (max-width: 900px) {
-   background-color: #ff0909;
-    border: 2px solid red;
-  }
+  
    `
 
 export const SessaoChamada = styled.section`
