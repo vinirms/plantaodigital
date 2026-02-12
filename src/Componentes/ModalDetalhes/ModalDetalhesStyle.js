@@ -87,7 +87,7 @@ export const BtnContainer = styled.div`
   gap: 10px;
    @media (max-width: 900px) {
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
   }
 `
 
