@@ -324,7 +324,7 @@ const handleReset = () => {
                 <h1>Passagem de Plantão</h1>
             </div>
             <div className='divSetor'>
-                <h3>Setor:{localStorage.removeItem("setor")}</h3>
+                <h3>Setor:{localStorage.getItem("setor")}</h3>
             </div>
             <Btnlogout onClick={handleLogOut}><img src={logout} alt="imagem logout" /></Btnlogout>
         </NavDiv>

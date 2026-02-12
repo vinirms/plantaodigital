@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="https://hfapassagemdeplantao.netlify.app/" element={<Landing />} />
 
         <Route
           path="/Home"
