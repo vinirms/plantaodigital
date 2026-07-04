@@ -1,0 +1,97 @@
+fazer deploy do backend
+        1: rodar o build dentro do visual studio apos mudanças 
+        2: entrar na pasta do publish do backend -- dotnet publish -c Release -o ./publish
+         vai gerar
+            bin/Release/net8.0/publish/
+        3: entrar no vps ssh root@*****
+        4: parar a api  --  systemctl stop api
+
+        5: limpar a pasta da api no vps -- 
+                    cd /var/www --
+                    rm -rf /var/www/api/*
+                    mkdir api
+
+            caso nao tenha a pasta pode criar com o comando -- mkdir -p /var/www/api
+
+        6: abrir o cmd dentro da pasta publish e executar o comendo 
+                scp -r . root@SEU_IP_DO_VPS:/var/www/api 
+                rsync -av --delete ./ root@IP:/var/www/api/
+                
+        7: aguardar subir os arquivos pro vps
+
+        8: no VPS ajustar as permissoes da pasta para evitar erro com o QuestPDF 
+            chown -R www-data:www-data /var/www/api
+            chmod -R 755 /var/www/api
+
+        9: iniciar a API novamente
+        ssh root@187.77.44.67  "systemctl restart api && systemctl status api"
+            systemctl start api
+            systemctl status api
+
+            systemctl restart api
+            systemctl status api
+        10 . habilitar permissao das pastas para a imagem logo pdf
+            chmod 755 /var/www/api/wwwroot/img/
+            chmod 644 /var/www/api/wwwroot/img/logo.png
+
+            chmod 755 /var/www/api/wwwroot/
+            chmod 755 /var/www/api/
+
+
+net data monitoramento
+        ssh -L 19999:localhost:19999 root@IP_DO_SEU_VPS
+http://localhost:19999/
+
+verificar configuraçoes e variaveis de ambiente para caso da connection string do build
+    1 cd /var/www/api
+    2 ls
+    3 nano appsettings.json
+apos ajustar: CTRL + O - ENTER - CTRL + X
+
+por fim 
+    systemctl daemon-reexec
+    systemctl daemon-reload
+    systemctl restart api
+
+teste da api
+    curl https://api.passagemplantaodigital.com.br/ping
+
+
+como criar vps do zero
+ 
+ 1 - pelo cmd ir no - ssh root@IP_DO_SERVIDOR
+
+2 - atualizar o sistema - apt update && apt upgrade -y
+
+3 - instalar dependencias -apt install -y wget curl unzip nginx
+
+4 instalar dot net 8
+    wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
+    dpkg -i packages-microsoft-prod.deb
+    apt update
+    apt install -y aspnetcore-runtime-8.0
+
+5 criar as pastas da aplicacao
+    mkdir /var/www
+    mkdir /var/www/api
+
+
+controle de logs, limpa logs auto para nao encher o disco
+1- sudo nano /etc/logrotate.d/dotnet
+2 - /var/log/*.log /var/log/nginx/*.log {
+    daily
+    rotate 7
+    compress
+    delaycompress
+    missingok
+    notifempty
+    su root adm
+    create 0640 root adm
+    postrotate
+        systemctl reload nginx 2>/dev/null || true
+    endscript
+}
+
+3- teste
+ sudo logrotate -f /etc/logrotate.d/dotnet -v  # -v = verbose
+
