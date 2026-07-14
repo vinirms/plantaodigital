@@ -199,6 +199,8 @@ const Landing = () => {
                   <option value="CTQIntensivo">CTQ Intensivo</option>
                   <option value="CTQEnfermaria">CTQ Enfermaria</option>
                   <option value="CTISL">CTI-SL</option>
+                  <option value="SalaAmarela">Sala Amarela</option>
+
               </>
             ):(
                 <>
