@@ -1295,7 +1295,7 @@ const comprimirImagem = (file, maxDimensao = 1600, qualidade = 0.8) => {
             </div>
           </RowCampoIntercorrenciasCurativoInfusoes>
 
-             {mode === "edit" && (
+             {/* {mode === "edit" && (
               <>
               {enviando && <ModalLoading />}
                 <RowImagensLesoes>
@@ -1353,7 +1353,7 @@ const comprimirImagem = (file, maxDimensao = 1600, qualidade = 0.8) => {
 
                     </RowImagensLesoes>
               </>
-)}
+)} */}
 
 
           <ModalImagem
